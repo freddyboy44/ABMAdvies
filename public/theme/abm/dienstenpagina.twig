@@ -1,0 +1,28 @@
+{% extends 'tweekolommen.twig' %}
+
+{% block content %}
+	<div class="dienstpagina">
+		<h2>{{ record.titel }}</h2>
+		<img class="titelfoto" src="{{ record.fotos.0|thumbnail(800,250,'c') }}">
+		<p class="gegevens">
+			{{ record.tekst }}
+		</p>
+	</div>
+{% endblock %}
+
+{% block aside %}
+	{% setcontent dienstenpaginas = 'dienstenpaginas' orderby 'id' %}
+		
+	<div class="dienstensidemenu">
+		<h5>Lees meer over onze expertise:</h5>
+		{% for pagina in dienstenpaginas %}
+			<div class="pagina">
+				<div class="gegevens">
+					<a class="{{ pagina == record ? ' active ' }}" href="{{ pagina.link }}">{{ pagina.titel }}</a>
+				</div>
+			</div>
+			
+		{% endfor %}
+	</div>
+
+{% endblock %}

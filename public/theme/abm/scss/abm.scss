@@ -1,0 +1,95 @@
+@import 'mixins';
+@import 'colors';
+@import 'fonts';
+@import 'menu';
+@import 'homepage';
+@import 'dienstenhome';
+@import 'dienstensidemenu';
+@import 'dienstenpagina';
+@import 'footer';
+@import 'tweekolommen';
+@import 'team';
+@import 'contact';
+@import 'thumbnails';
+@import 'magnific-popup';
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	overflow-y: scroll;
+  	-webkit-overflow-scrolling: touch;
+}
+
+body, html {
+	font-family: 'ornitons-serial-lightregular';
+	margin: 0;
+	color: $blauwekleur;
+}
+
+p {
+	line-height: 140%;
+}
+
+html, body {
+	height: 100%; 
+}
+
+html {
+	
+}
+
+h1,h2,h3,h4,h5 {
+	font-family: 'ornitons-serial-lightregular';
+	letter-spacing: 1.3pt;
+	line-height: 150%;	
+}
+
+h2.titel {
+	font-family: 'ornitons-serial-extraboldRg';
+	text-transform: uppercase;
+	text-align :center;
+	width: 100%;
+
+}
+
+a, a:hover, a:focus {
+	color: $blauwekleur;
+}
+a:hover {
+	text-decoration: underline;
+}
+a, a:focus {
+	text-decoration: none;
+}
+
+.max-container {
+	display: block;
+	margin: auto;
+	width: 95%;
+	padding-top: 10px;
+	overflow: hidden;
+	
+	@include breakpoint(laptop) {
+		max-width: 760px;
+	}
+	@include breakpoint(desktop) {
+		max-width: 940px;
+	}
+
+}
+.max-container.homepage {
+	padding-top: 0px;
+}
+
+.content {
+	font-size: 14px;
+	line-height: 160%;
+}
+
+.img-responsive {
+	display: block;
+  	max-width: 100%;
+  	height: auto;
+}

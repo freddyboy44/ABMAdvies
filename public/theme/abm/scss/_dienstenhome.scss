@@ -1,0 +1,99 @@
+.homepage {
+	.diensten {
+		overflow: hidden;
+		padding-bottom: 20px;
+		border-bottom: solid 5px $blauwekleur;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction : row;
+		
+		h4 {
+			font-family: 'ornitons-serial-lightregular';
+			font-weight: bold;
+			letter-spacing: 1.0pt;
+
+		}
+
+		.dienstenpagina {
+			align-items: stretch;
+			align-content: flex-start;
+			box-sizing: border-box;	
+			padding: 10px;
+			overflow: hidden;
+			display: block;
+			float: left;
+			width: 100%;
+			@include breakpoint(phablet) {
+				width: 50%;	
+			}
+			@include breakpoint(laptop) {
+				width: 20%;
+				
+			}
+
+			a, a:hover, a:focus {
+				text-decoration: underline;
+			}
+			.gegevens {
+				@include breakpoint(phabletonly) {
+					display: flex;
+					flex-direction: column;		
+				}
+				
+
+				.h4content {
+					position: relative;
+					a, a:focus {
+						text-decoration: none;
+					}
+					@include breakpoint(mobileonly) {
+						order: 2;		
+						margin: 5px;
+						margin-top: 20px;
+						//height: 40px;
+					}
+					@include breakpoint(tablet) {
+						height: 70px;
+							
+					}
+					h4 {
+
+						text-align :center;
+						text-transform: uppercase;
+						
+						@include breakpoint(tabletonly) {
+							margin: 0;	
+						}
+						@include breakpoint(laptop) {
+							
+							text-align: left;	
+							//@include vertical-align();
+						}
+					}
+				}
+
+				img {
+					@include breakpoint(mobileonly) {
+						order: 1;	
+					}
+					
+					max-width: 100%;
+					height: auto;
+					display: block;
+					margin:auto;
+				}
+			}
+
+			p {
+				margin: 0;
+				margin-top: 15px;
+				font-size: 14px;
+				line-height: 160%;
+			}
+
+
+			
+			
+		}
+	}
+}

@@ -1,0 +1,94 @@
+@import "compass/css3/transition";
+.team {
+	display: flex;
+	align-items: stretch;
+	direction: row;
+	flex-wrap: wrap;
+
+	.member, .vacature {
+		width: 100%;
+		@include breakpoint(phablet) {
+			width: 50%;
+		}
+		@include breakpoint(laptop) {
+			width: 33.3333%;	
+		}
+		
+		float: left;
+		padding: 10px;
+		img {
+			width: 100%;
+			max-height: 100%;
+			
+			filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+		    filter: gray; /* IE6-9 */
+		    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+		}
+		img:hover {
+			@include transition-duration(450ms);
+  			@include transition-timing-function(ease-in);
+			filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+    		-webkit-filter: grayscale(0%);
+		}
+
+		h5 {
+			width: 100%;
+			text-align: center;
+			margin : 8px 0;
+		}
+
+		.functie {
+			text-align: center;
+			color : lighten(#000,20%);
+		}
+
+		p {
+			margin-top: 6px;
+			margin-bottom: 6px;
+			font-size: 13px;
+
+			i {
+				width: 20px;
+			}
+		}
+		p.opleiding {
+			
+			font-size: 12px;
+		}
+		
+		
+	}
+	.vacature {
+		padding: 10px;
+		position: relative;
+		@include breakpoint(tablet) {
+			height: 200px;	
+		}
+		
+	
+		img {
+			display: block;
+			overflow: hidden;
+			width: auto;
+			height: auto;
+			margin:auto;
+			@include breakpoint(tablet) {
+				@include vertical-align();
+			}
+		}
+		h5 {
+			@include breakpoint(tablet) {
+				position: relative;
+				top: 150px;	
+			}
+			
+		}
+		.functie {
+			display: block;
+			@include breakpoint(tablet) {
+				position: relative;
+				top: 150px;	
+			}
+		}
+	}
+}

@@ -1,0 +1,37 @@
+{% extends 'tweekolommen.twig' %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ paths.theme }}/js/jquery.magnific-popup.min.js"></script>
+{% endblock %}
+
+
+{% block content %}
+	<h1>{{ record.title }}</h1>
+	
+	{{ record.omschrijving }}
+	
+	<div class="thumbnails gallery">
+		{% for foto in record.fotos %}
+			<a class="thumb" href="{{ image(foto) }}"><img class="img-responsive" src="{{ foto|thumbnail(300,200,'f') }}"></a>
+		{% endfor %}
+	</div>
+	<script type="text/javascript">
+	  $(document).ready(function() {
+
+	    $('.gallery').each(function() { // the containers for all your galleries
+		    $(this).magnificPopup({
+		        type: 'image',
+		        delegate: 'a',
+		        gallery: {
+		          enabled:true
+		        }
+		    });
+		});
+	  });
+	</script>
+{% endblock %}
+
+{% block aside %}
+	{% include '_referentiesidemenu.twig' %}
+{% endblock %}

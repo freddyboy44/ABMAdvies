@@ -15,14 +15,14 @@ payoff: AdviesBureau Marketing en Onderzoek
 # The theme to use. Be sure to copy the {theme_path}/base-2014 folder, and change the
 # name here accordingly. Don't edit the templates in theme/base-2014, because
 # they _will_ get updated in next releases
-theme: default
+theme: abm
 
 # The locale that'll be used by the application. If no locale is set the
 # fallback locale is 'en_GB'. For available options, see: http://docs.bolt.cm/locales
 # In some cases it may be needed to specify (non-standard) variations of the locale
 # to get everything to work as desired. This can be done as [nl_NL, Dutch_Netherlands]
 # When specifying multiple locale, make sure the first is a standard locale
-locale: be_NL
+locale: nl_NL
 timezone: Europe/Brussels
 
 # Set maintenance mode true or false
@@ -56,7 +56,7 @@ cron_hour: 3
 # the website, be sure to check for a config.yml file in your theme's folder. If
 # a template is set there, it will override the setting here.
 homepage: page/1
-homepage_template: index.twig
+homepage_template: homepage.twig
 
 # The default content for the 404 page. Uses the 'record_template' template by default.
 # Make sure this is set to an existing record, otherwise visitors will get an error-page
@@ -141,7 +141,7 @@ thumbnails:
   notfound_image: view/img/default_notfound.png
   error_image: view/img/default_error.png
   save_files: false
-  allow_upscale: false
+  allow_upscale: true
   exif_orientation: true
   browser_cache_time: 2592000
 
@@ -243,15 +243,15 @@ wysiwyg:
 # support SMTP, sign up for a (free) Mandrill account at https://mandrill.com/
 # for sending emails reliably.
 
-#mailoptions:
-#  transport: smtp
-#  spool: true
-#  host: localhost
-#  username: username
-#  password: password
-#  port: 25
-#  encryption: null
-#  auth_mode: null
+mailoptions:
+  transport: smtp
+  spool: true
+  host: uit.telenet.be
+  username: boifrederik@telenet.be
+  password: freddy44
+  port: 25
+  encryption: null
+  auth_mode: null
 
 #mailoptions:
 #  transport: mail

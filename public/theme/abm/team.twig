@@ -1,0 +1,29 @@
+{% extends 'basepage.twig' %}
+
+{% block body %}
+	<div class="max-container content">
+		<div class="team">
+		{% setcontent members = 'teammembers' orderby 'id'  %}
+			{% for member in members %}
+			    <div class="member">
+			    	<img src="{{ member.foto|thumbnail(250,200) }}">
+			    	<h5>{{ member.naam }}</h5>
+			    	<p class="functie">{{ member.functie }}</p>
+			    	<p class="opleiding">{{ member.opleiding|raw }}</p>
+			    	<p class="indienst"><i class="fa fa-briefcase"></i> sinds {{ member.indienst|raw }}</p>
+			    	<p class="email"><i class="fa fa-envelope-o"></i> <a href="{{ member.email }}">{{ member.email|raw }}</a></p>
+			    	<p class="telefoon"><i class="fa fa-phone"></i> {{ member.telefoon|raw }}</p>
+			    	<p class="gsm"><i class="fa fa-mobile"></i> {{ member.gsm|raw }}</p>
+			    </div>
+			{% endfor %}
+			
+			<div class="vacature">
+				
+				<img src="{{ 'theme/abm/images/wewervenaan.png'}}">
+				<h5>We werven aan</h5>
+				<a class="functie" href="contact">Contacteer ons</a>
+				
+			</div>
+		</div>
+	</div>
+{% endblock %}

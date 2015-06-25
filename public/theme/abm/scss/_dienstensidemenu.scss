@@ -1,0 +1,19 @@
+			
+.dienstensidemenu, .referentiesidemenu {
+	h5 {
+		letter-spacing: 0.8pt;
+	}
+	.pagina {
+
+		padding: 10px 0px;
+		margin-bottom: 5px;
+		a {
+			text-transform: uppercase;
+		}
+		a.active {
+			font-family: 'ornitons-serial-mediumregular';
+			font-weight: bold;
+		}
+		border-bottom: solid 2px $blauwekleur;
+	}
+}

@@ -1,0 +1,45 @@
+.homepage {
+	overflow:hidden;
+	.abm-info-container {
+		@include breakpoint(tablet) {
+			border-bottom: solid 5px $blauwekleur;	
+		}
+	}
+	.abm-info {
+		
+		margin: auto;
+		margin-top: 15px;
+		padding-bottom: 15px;
+		width: 100%;
+		overflow: hidden;
+		@include breakpoint(phablet) {
+			width: 90%;
+		}
+		@include breakpoint(tablet) {
+			text-align: center;
+		}
+
+		@include breakpoint(laptop) {
+			width: 80%;
+		}
+		@include breakpoint(desktop) {
+			width: 70%;
+		}
+	}
+
+	.contacteerons {
+		text-decoration: none;
+		width: 100%;
+		font-size: 22px;
+		font-family: 'ornitons-serial-lightregular';
+		font-weight: bold;
+		text-align: left;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		@include breakpoint(laptop) {
+			text-align: center;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+	}
+}

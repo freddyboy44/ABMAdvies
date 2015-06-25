@@ -1,0 +1,12 @@
+{% setcontent referenties = 'referenties' orderby 'id' %}
+		
+<div class="referentiesidemenu">
+	<h5>Enkele van onze referenties:</h5>
+	{% for pagina in referenties %}
+		<div class="pagina">
+			<div class="gegevens">
+				<a class="{{ pagina == record ? ' active ' }}" href="{{ pagina.link }}">{{ pagina.naam }}</a>
+			</div>
+		</div>
+	{% endfor %}
+</div>

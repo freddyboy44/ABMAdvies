@@ -1,0 +1,79 @@
+footer {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+	align-content: flex-start;
+	align-items: stretch;
+
+	background-color: white;
+	color: $blauwekleur;
+	@include breakpoint(tablet) {
+		background-color: $blauwekleur;
+		color: white;
+	}
+	
+	a, a:hover, a:focus {
+		color:$blauwekleur;
+		@include breakpoint(tablet) {
+			color: white;
+		}
+	}
+	
+	.logo, .adres, .contactpersoon {
+		//min-width: 230px;
+		width: 100%;
+				
+		@include breakpoint(tablet) {
+			width: 33%;	
+			height: 150px;	
+
+		}
+		
+		float: left;
+		
+
+	}
+
+	.logo {
+		display: none;
+		@include breakpoint(tablet) {
+			display: block;
+		}
+		img {
+			max-height: 50px;
+			width: auto;
+			display: block;
+			@include breakpoint(tablet) {
+				@include vertical-align();	
+			}
+		}	
+	}
+	
+	.adres, .contactpersoon {
+		p {
+			font-family: 'ornitons-serial-extralightRg';
+			letter-spacing: 1.8pt;
+			font-size: 11px;
+			font-weight: normal;
+			margin:0;
+			padding: 10px 0px;
+			text-align: left;
+			width: 100%;
+			line-height: 1.6;
+			padding-left:2px;
+			@include breakpoint(tablet) {
+				@include vertical-align();	
+
+				text-align: left;
+			}
+		}
+	}
+}
+
+footer.flexibel {
+	position: relative;
+	top: auto;
+	left: auto;
+}

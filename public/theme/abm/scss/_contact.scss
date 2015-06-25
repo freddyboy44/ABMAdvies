@@ -1,0 +1,152 @@
+.contactpagina {
+	overflow: hidden;
+	#map-canvas {
+		width: 100%;
+		min-height: 250px;
+
+		@include breakpoint(laptop) {
+			min-height: 400px;
+		}
+	}
+
+	.only-mobile {
+		display: none;
+		@include breakpoint(phabletonly) {
+			display: block;
+		}
+
+	}
+
+	.bottom {
+		overflow: hidden;
+		padding: 20px 0px;
+
+		display: none;
+		@include breakpoint(tablet) {
+			display: block;
+		}
+
+		.logo {
+			float: left;
+			width: 100%;
+			@include breakpoint(tablet) {
+				width: 35%;
+			}
+			img {
+				max-height: 60px;
+				@include breakpoint(laptop) {
+					max-height: 80px;	
+				}
+				
+			}
+		}
+
+		.formulier {
+			
+			float: left;
+			width: 100%;
+			@include breakpoint(tablet) {
+				width: 65%;
+			}
+
+			.simpleform {
+				label {
+					display: none;
+				}
+				input, textarea {
+					background-color: lighten($blauwekleur,60%);
+					border: none;
+					display: block;
+					height: 26px;
+					padding: 6px;
+					color: $blauwekleur;
+					margin-bottom: 8px;
+					width: 100%;
+				}
+				
+				::-webkit-input-placeholder { /* WebKit browsers */
+				    color:    $blauwekleur;
+				}
+				:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+				   color:    $blauwekleur;
+				   opacity:  1;
+				}
+				::-moz-placeholder { /* Mozilla Firefox 19+ */
+				   color:    $blauwekleur;
+				   opacity:  1;
+				}
+				:-ms-input-placeholder { /* Internet Explorer 10+ */
+				   color:    $blauwekleur;
+				}
+
+				input:focus::-webkit-input-placeholder { color:transparent; }
+				input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+				input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+				input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+				textarea:focus::-webkit-input-placeholder { color:transparent; }
+				textarea:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+				textarea:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+				textarea:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+				input:active, textarea:active {
+					//border: solid 1px $blauwekleur;
+				}
+
+				input {
+					max-width: 250px;
+				}
+				textarea {
+					height: 80px;
+				}
+
+				input[type='submit']{
+					max-width: 120px;
+					height: 32px;
+					font-family: 'ornitons-serial-mediumregular';
+					font-size: 18px;
+					//font-weight: bold;
+					background-color: white;
+					border: solid 2px $blauwekleur;
+					color: $blauwekleur;
+					text-transform: uppercase;
+				}
+
+
+			}
+		}
+	}
+}
+
+.recaptchatable .recaptcha_image_cell, #recaptcha_table {
+    border: none !important;
+  }
+#recaptcha_area {
+	#recaptcha_table {
+		.recaptcha_image_cell {
+			padding-left: 0px !important;
+		}
+
+		tbody {
+			tr {
+				td {
+					padding-left: 0px !important;
+
+					div {
+						input#recaptcha_response_field {
+							border: none !important;
+							color: $blauwekleur;
+							padding: 3px;
+						}	
+					}
+				}
+			}
+		}
+
+		
+	}
+}
+.recaptchatable .recaptcha_image_cell {
+	padding-left: 0px !important;
+}
+
+  

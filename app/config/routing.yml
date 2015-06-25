@@ -5,8 +5,6 @@
 # ------------------------------------------------------------------------------
 # Place your own routes here, that have a HIGHER priority than the default routes.
 
-
-
 # ------------------------------------------------------------------------------
 # These are the routes defining the default behaviour of Bolt's frontend.
 # Changing these might give unexpected results or even break your website. If
@@ -71,10 +69,10 @@ contentlisting:
 
 # Example override for a specific contenttype
 
-#pagebinding:
-#  path: /{slug}
-#  defaults: { _controller: 'Bolt\Controllers\Frontend::record', 'contenttypeslug': 'page' }
-#  contenttype: pages
+pagebinding:
+  path: /{slug}
+  defaults: { _controller: 'Bolt\Controllers\Frontend::record', 'contenttypeslug': 'pagina' }
+  contenttype: paginas
 #
 
 
@@ -119,6 +117,3 @@ contentlisting:
 # Example: rendering a "static" template from the current theme with no associated record/content.
 # Note that you can still load and render content from within the template.
 
-# templatebinding:
-#   path:     /static-page/
-#   defaults: { _controller: 'Bolt\Controllers\Frontend::template', template: 'static-page' }

@@ -1,0 +1,22 @@
+{% macro display_menu_item(item, loop) %}
+    {% from _self import display_menu_item %}
+    
+    <li class="index-{{ loop.index }}{% if loop.first %} first{% endif %}{% if loop.last %} last{% endif %}{% if item.submenu is defined %} has-dropdown{% endif %}">
+        <a href="{{ item.link }}" {% if item.title is defined %}title='{{ item.title|escape }}'{% endif %}
+            class='{{ record.contenttype.name == 'Dienstenpaginas' and item.label == 'Diensten' ? ' current ' : '' }}{{ item.path == 'homepage' and record is null ? ' current ' }}{{ item.path == record.slug ? ' current ' }}{{ item.label == "Over ABM" and record.contenttype.name == 'Referenties' ? ' current ' }}'>
+            {% if item.label is defined %}{{item.label}}{% else %} - {% endif %}
+        </a>
+    </li>
+{% endmacro %}
+
+{% from _self import display_menu_item %}
+
+<ul>
+    
+    {% for item in menu %}
+
+        {% if item.label is defined %}
+            {{ display_menu_item(item, loop) }}
+        {% endif %}
+    {% endfor %}
+</ul>

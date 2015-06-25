@@ -1,0 +1,19 @@
+{% setcontent dienstenpaginas = 'dienstenpaginas' orderby 'id' %}
+
+<div class="diensten">
+	{% for pagina in dienstenpaginas %}
+		<div class="dienstenpagina">
+			<div class="gegevens">
+				<div class="h4content">
+					<a href="{{ pagina.link }}"><h4>{{ pagina.titel }}</h4>	</a>
+				</div>
+				<a href="{{ pagina.link }}"><img src="{{ pagina.fotos.0|thumbnail(250,170,'f') }}">	</a>
+			</div>
+			<p class="teaser">
+				{{ pagina.teaser }}
+			</p>
+			<a href="{{ pagina.link }}">meer -></a>
+		</div>
+		
+	{% endfor %}
+</div>

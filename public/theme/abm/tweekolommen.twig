@@ -1,0 +1,26 @@
+{% extends 'basepage.twig' %}
+
+{% block body %}
+	<div class="max-container tweekolommen">
+		<div class="flex-container">
+			<div class="content">
+				{% block content %}
+					<div class="dienstpagina">
+						<h2>{{ record.titel }}</h2>
+						<img class="titelfoto" src="{{ record.fotos.0|thumbnail(800,250,'c') }}">
+						<p class="gegevens">
+							{{ record.tekst }}
+						</p>
+					</div>
+				{% endblock %}
+			</div>
+			<aside>
+				{% block aside %}
+					{% if record.titel == "Over ABM" %}
+						Lees meer over onze expertise:
+					{% endif %}
+				{% endblock %}
+			</aside>
+		</div>
+	</div>
+{% endblock %}
